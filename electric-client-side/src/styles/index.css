@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-bodycolor font-fontbase
+    }
+
+    .container-base {
+        @apply container mx-auto
+    }
+}
+
+@layer components {
+    .text-input {
+        @apply appearance-none rounded-lg px-5 py-2 bg-neutral-200 placeholder-gray-500 text-gray-900 focus:outline-none
+    }
+
+    .loading {
+        @apply w-full h-[5px] bg-red-500
+    }
+}
