@@ -22,14 +22,11 @@ const login = async (req) => {
     throw new UnauthorizedError('Invalid Credentials');
   }
 
-  let role = result.role;
   const tokenPayload = createTokenUser(result);
   const token = createJWT({ payload: tokenPayload });
   const refreshToken = createRefreshJWT({ payload: tokenPayload });
 
-  if (role === 'admin' || role === 'pelanggan') {
-    await createUserRefreshToken({ refreshToken, user: result._id });
-  }
+  await createUserRefreshToken({ refreshToken, user: result._id });
 
   return {
     token,

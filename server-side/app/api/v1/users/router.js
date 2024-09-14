@@ -8,22 +8,12 @@ const {
 
 router.post('/sign-up', create);
 
-router.get('/users', authenticateUser, authorizeRoles('admin'), index);
+router.get('/users', authenticateUser, index);
 
-router.get(
-  '/users/:id',
-  authenticateUser,
-  authorizeRoles('pelanggan', 'admin'),
-  find
-);
+router.get('/users/:id', authenticateUser, find);
 
-router.put(
-  '/users/:id',
-  authenticateUser,
-  authorizeRoles('pelanggan', 'admin'),
-  update
-);
+router.put('/users/:id', authenticateUser, update);
 
-router.delete('/users/:id', authenticateUser, authorizeRoles('admin'), destroy);
+router.delete('/users/:id', authenticateUser, destroy);
 
 module.exports = router;

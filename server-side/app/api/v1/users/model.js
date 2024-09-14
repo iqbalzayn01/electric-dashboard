@@ -41,8 +41,7 @@ let userSchema = new mongoose.Schema(
     },
     role: {
       type: String,
-      enum: ['pelanggan', 'admin'],
-      default: 'pelanggan',
+      default: 'admin',
       required: [true, 'Role harus diisi'],
     },
   },

@@ -27,9 +27,6 @@ const v1 = '/api/v1';
 const authCMSRouter = require('./app/api/v1/auth/router');
 const usersRouter = require('./app/api/v1/users/router');
 const userRefreshTokenRouter = require('./app/api/v1/userRefreshToken/router');
-const pelangganRouter = require('./app/api/v1/pelanggan/router');
-const tarifRouter = require('./app/api/v1/tarifListrik/router');
-const imagesRouter = require('./app/api/v1/images/router');
 
 // Middlewares
 const notFoundMiddleware = require('./app/middlewares/not-found');
@@ -51,9 +48,6 @@ app.get('/', (req, res) => {
 app.use(`${v1}/cms`, authCMSRouter);
 app.use(`${v1}/cms`, usersRouter);
 app.use(`${v1}/cms`, userRefreshTokenRouter);
-app.use(`${v1}/cms`, pelangganRouter);
-app.use(`${v1}/cms`, tarifRouter);
-app.use(`${v1}/cms`, imagesRouter);
 
 // App Middlewares
 app.use(notFoundMiddleware);
